@@ -62,6 +62,7 @@ export default function Pagination({
           // if the currentPage is 1 and the index is 0 give it a class of current otherwise don't give it a class
           className={currentPage === 1 && i === 0 ? 'current' : ''}
           to={`${base}/${i > 0 ? i + 1 : ''}`}
+          key={`page${i}`}
         >
           {i + 1}
         </Link>

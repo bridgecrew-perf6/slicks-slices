@@ -11,7 +11,7 @@ export default function LoadingGrid({ count }) {
       {/* if we don't need a parameter we can just use underscore _ so we can get to the next param */}
       {/* second param of the second arg : i = index */}
       {Array.from({ length: count }, (_, i) => (
-        <ItemStyles>
+        <ItemStyles key={`loader-${i}`}>
           <p>
             <span className="mark">Loading...</span>
           </p>

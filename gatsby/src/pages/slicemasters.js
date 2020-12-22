@@ -44,7 +44,9 @@ const SlicemasterStyles = styled.div`
 // 4. Pagination
 
 export default function SlicemastersPage({ data, pageContext }) {
+  
   const slicemasters = data.slicemasters.nodes;
+  
   return (
     <>
       <SEO title={`Slicemasters - Page ${pageContext.currentPage || 1}`} />
@@ -60,7 +62,8 @@ export default function SlicemastersPage({ data, pageContext }) {
       <SlicemasterGrid>
         {/* map over array of slicemasters.  Implicitly return each person */}
         {slicemasters.map((person) => (
-          <SlicemasterStyles>
+          //TODO add a key that will be unique here
+          <SlicemasterStyles key={person.id}>
             {/* create a link based off the current person's slug */}
             <Link to={`/slicemaster/${person.slug.current}`}>
               <h2>

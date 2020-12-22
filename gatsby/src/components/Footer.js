@@ -3,7 +3,7 @@ import React from 'react';
 // something about how the function is written in the JSX? See error note
 export default function Footer(fullYear) {
   return (
-    <footer>
+    <footer className="center">
       <p>&copy; Slicks's Slices {new Date().getFullYear()}</p>
     </footer>
   );
