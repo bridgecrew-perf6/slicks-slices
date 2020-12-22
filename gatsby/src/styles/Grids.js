@@ -3,7 +3,11 @@ import styled from 'styled-components';
 export const HomePageGrid = styled.div`
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  --columns: 2;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+  @media (max-width: 800px) {
+    --columns: 1;
+  }
 `;
 
 export const ItemsGrid = styled.div`
@@ -31,6 +35,10 @@ export const ItemStyles = styled.div`
     width: 100%;
     left: 0;
     margin: 0;
+    ${'' /* fallback if browser ain't know what clamp be */}
+    font-size: 2rem; 
+    ${'' /* manage the fint size dependant on the screen size.  Yes? */}
+    font-size: clamp(12px, 5vw, 20px);
   }
   .mark {
     display: inline;
